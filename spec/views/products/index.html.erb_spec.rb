@@ -22,4 +22,17 @@ RSpec.describe "products/index", :type => :view do
     assert_select "tr>td", :text => 1.to_s, :count => 2
     assert_select "tr>td", :text => "MyText".to_s, :count => 2
   end
+
+  it "renders new product form" do
+    render
+
+    assert_select "form[action=?][method=?]", products_path, "post" do
+
+      assert_select "input#product_ProductName[name=?]", "product[ProductName]"
+
+      assert_select "input#product_Price[name=?]", "product[Price]"
+
+      assert_select "textarea#product_Description[name=?]", "product[Description]"
+    end
+  end
 end

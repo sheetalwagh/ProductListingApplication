@@ -3,22 +3,25 @@
 <div class="jumbotron">
   <div class="container">
   <% @products.each do |product| %>   
-  <div class="row">
+  <div >
      <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-          <%= link_to product.ProductName,edit_product_path(product), class: "thumbnail"%>
+          <%= link_to product.ProductName,product_path(product),OnClick: '(this.modal);' ,class: "thumbnail"%>
           <%= product.Price %>
           <%= product.Description %>        
          </div>
         </div>
-
   </div>
   <div class="backdrop"></div>
   <div class="box"><div class="close"></div>
 </div>    
-<% end %>
+<% end %><br/>
+
 <div class='remoteform'>
+  <div class="col-sm-6 col-md-4">
   <%= render partial: 'products/form' , locals: {doajax: true}%>
+
+</div>
 </div>
 </div>
 </div>
