@@ -1,40 +1,26 @@
-<h1 style="">Listing products</h1>
+<div class="page-header" >
+  <h1>Product Listing</h1>
+<div class="jumbotron">
+  <div class="container">
+  <% @products.each do |product| %>   
+  <div class="row">
+     <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <%= link_to product.ProductName,edit_product_path(product), class: "thumbnail"%>
+          <%= product.Price %>
+          <%= product.Description %>        
+         </div>
+        </div>
 
-<table style= "padding-left:40px">
-  <thead>
-    <tr>
-      <th>Productname</th>
-      <th>Price</th>
-      <th>Description</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody style="width: 300px;
-    height: 100px;
-    background-color: pink;
-    box-shadow: 10px 10px 5px #888888;">
-    <% @products.each do |product| %>
-      <tr >
-        <td><%= link_to product.ProductName, edit_product_path(product), onmouseover: "this.src='http://html-generator.weebly.com/files/theme/m-hover-2.png" %></td>
-        <td><%= product.Price %></td>
-        <td><%= product.Description %></td>
-        <!--td><#%= link_to 'Show', product %></td>
-        <td><#%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><#%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td-->
-      </tr>
-    <% end %>
-    <!--button onclick="javascript:void window.open('1406209802984','width=800,height=500,toolbar=no,menubar=no,location=no,status=no,scrollbars=no,resizable=no,left=0,top=0');return false;">Open the Popup Window</button>
-    <a href="#"><img src="http://html-generator.weebly.com/files/theme/m-hover-1.png" name="image1" title="Title Text" onmouseover="this.src='http://html-generator.weebly.com/files/theme/m-hover-2.png'" onmouseout="this.src='http://html-generator.weebly.com/files/theme/m-hover-1.png'" width="150" style="border: 0;"></a-->
-  </tbody>
-</table>
+  </div>
+  <div class="backdrop"></div>
+  <div class="box"><div class="close"></div>
+</div>    
+<% end %>
 <div class='remoteform'>
   <%= render partial: 'products/form' , locals: {doajax: true}%>
 </div>
+</div>
+</div>
+</div>
 
-
-<br>
-
-<%#= link_to 'New Product', new_product_path %>

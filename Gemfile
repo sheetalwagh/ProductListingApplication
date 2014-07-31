@@ -9,13 +9,6 @@ gem 'rails', '4.0.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
-#gem 'twitter-bootstrap-rails'
-#group :production do
-# gem 'libv8', '~> 3.11.8.3'
-# gem 'therubyracer', :platform => :ruby 
-#gem "less-rails"
-#end
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
