@@ -6,7 +6,7 @@
   <div >
      <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-          <%= link_to product.ProductName,product_path(product),OnClick: '(this.modal);' ,class: "thumbnail"%>
+          <%= link_to product.ProductName,edit_product_path(product),OnClick: '(this.modal);' ,class: "thumbnail"%>
           <%= product.Price %>
           <%= product.Description %>        
          </div>
